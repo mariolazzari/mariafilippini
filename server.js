@@ -1,5 +1,4 @@
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 
@@ -9,10 +8,7 @@ const { EXPRESS_PORT, EXPRESS_HOST, MONGO_URI, NODE_ENV } = process.env;
 
 // mongoDB connection
 mongoose
-  .connect(
-    MONGO_URI,
-    { useNewUrlParser: true }
-  )
+  .connect(MONGO_URI, { useNewUrlParser: true })
   .then(() => console.log(`MongoDB connected on ${MONGO_URI}`))
   .catch(err => console.log("Error while connectiong to MongoDB", err));
 
@@ -20,8 +16,7 @@ mongoose
 const app = express();
 
 // express middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 
 // express routes
 app.use("/", require("./routes/test"));

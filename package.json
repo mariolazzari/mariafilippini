@@ -10,12 +10,11 @@
   "author": "Mario Lazzari",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.3"
+    "mongoose": "^5.5.5"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.19.0"
   }
 }
